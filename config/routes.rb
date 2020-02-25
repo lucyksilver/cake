@@ -7,8 +7,8 @@ Rails.application.routes.draw do
     resources :orders, only: [:new, :create]
   end
 
-  resources :users, only: :show
-  resources :orders, only: :destroy
+  resources :users, only: [:show]
+  resources :orders, only: [:destroy]
 
   get "/profile", to: 'pages#profile'
 end
