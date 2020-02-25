@@ -5,6 +5,8 @@ class User < ApplicationRecord
   has_many :items, dependent: :destroy # user items for sale
   has_many :cake_items, through: :orders, source: :item # ordered cakes by user
 
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end
+

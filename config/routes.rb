@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   resources :users, only: :show
   resources :orders, only: :destroy
 
+  get "/profile", to: 'pages#profile'
 end
