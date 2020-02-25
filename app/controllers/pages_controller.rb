@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  skip_before_action :authenticate_user!, only: :home
   def home
     @items = Item.all
     @portions = Item.all.map { |c| c.portions }.uniq
