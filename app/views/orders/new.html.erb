@@ -1,0 +1,5 @@
+<h1>Your new order!</h1>
+<%= simple_form_for [@item, @order] do |f| %>
+  <%= f.input :description %>
+  <%= f.submit %>
+<% end %>
