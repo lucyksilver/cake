@@ -19,3 +19,12 @@
   <input type="submit">
 </form>
 
+<h2>Featured cakes</h2>
+<ul>
+  <% @items.sample(3).each do |i| %>
+  <li>
+    <p><%= i.flavour %></p>
+    <p><%= i.description %></p>
+  </li>
+  <% end %>
+</ul>
