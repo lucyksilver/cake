@@ -1,3 +1,4 @@
 <h1><%= @item.flavour %></h1>
+<%= cl_image_tag @item.photo.key, height: 300, crop: :fill %>
 <p><%= @item.description %></p>
 <%= link_to "Order this cake!", new_item_order_path(@item) %>
