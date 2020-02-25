@@ -2,7 +2,7 @@
 <ul>
   <% @items.each do |item| %>
     <li>
-      <p><%= item.flavour %></p>
+      <p><%= link_to item.flavour, item_path(item)%></p>
       <p><%= item.occasion %></p>
       <p><%= item.portions %></p>
     </li>
