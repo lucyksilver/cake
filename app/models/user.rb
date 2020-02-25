@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :orders, dependent: :destroy
   has_many :items, dependent: :destroy # user items for sale
-  has_many :items, through: :orders # ordered cakes by user
+  has_many :cake_items, through: :orders, source: :item # ordered cakes by user
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
