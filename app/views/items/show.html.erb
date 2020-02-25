@@ -1,3 +1,5 @@
 <h1><%= @item.flavour %></h1>
 <p><%= @item.description %></p>
 <%= link_to "Home", items_path %>
+<%= link_to "Order this cake!", new_item_order_path(@item) %>
+
