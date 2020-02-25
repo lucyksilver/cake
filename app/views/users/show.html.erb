@@ -1,12 +1,17 @@
 <h2>Your profile</h2>
 <%= @user.name %>
 
+<h3>Your orders!</h3>
+<ul>
 <% @user.orders.each do |order| %>
-<%= order.description %>
+<li>Your ordered cake: <%= order.item.flavour %><br> Your message to the baker: <%= order.description %> </li>
 <% end %>
+</ul>
 
+<h3>Your cakes!</h3>
+<ul>
 <% @user.items.each do |item| %>
-<%= item.description %>
-<%= item.portions %>
-<%= item.description %>
+<li>Your cake is <%= item.flavour %>. It will serve <%= item.portions %> people and the cake description is: <%= item.description %></li>
 <% end %>
+</ul>
+
