@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
   def index
     @items = Item.all
     @items = @items.where(flavour: params[:flavour]) if params[:flavour]
@@ -16,8 +17,9 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    @item.user = current_user
     if @item.save
-      redirect_to items_path(@item)
+      redirect_to items_path
     else
       render :new
     end
@@ -42,6 +44,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:user_id, :cost, :flavour, :portions, :occasion)
+    params.require(:item).permit(:user_id, :cost, :flavour, :portions, :occasion, :description)
   end
 end
