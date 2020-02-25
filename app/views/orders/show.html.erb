@@ -1,5 +1,11 @@
-<h1>Your order description, but we need to add the item description here</h1>
+<h1>Your order!</h1>
 
-<%= @order.description %>
+<h3>Now you can have your <%= @order.item.flavour%> and eat it!</h3>
+<ul>
+<li> The perfect occasion to enjoy your <%= @order.item.flavour%> is <%= @order.item.occasion %></li>
+<li>Your <%= @order.item.flavour%> will feed <%= @order.item.portions %> lucky people</li>
+</ul>
 
-<%= link_to "go home", root_path %>
+Your added message: <%= @order.description %>
+
+<p><%= link_to "go home", root_path %></p>
