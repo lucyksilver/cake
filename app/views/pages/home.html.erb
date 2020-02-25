@@ -1,2 +1,21 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+<form action="/items">
+  <select name="portions" id="portions">
+    <% @portions.each do |portion| %>
+      <option value="<%= portion %>"><%= portion %></option>
+    <% end %>
+  </select>
+  <select name="flavour" id="flavour">
+    <% @flavours.each do |flavour| %>
+      <option value="<%= flavour %>"><%= flavour %></option>
+    <% end %>
+  </select>
+  <select name="occasion" id="occasion">
+    <% @occasions.each do |occasion| %>
+      <option value="<%= occasion %>"><%= occasion %></option>
+    <% end %>
+  </select>
+  <input type="submit">
+</form>
+
