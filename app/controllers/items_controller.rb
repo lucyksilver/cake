@@ -33,7 +33,7 @@ class ItemsController < ApplicationController
     redirect to item_path(@item)
   end
 
-  def delete
+  def destroy
     @item = Item.find(params[:id])
     @item.destroy
     redirect_to items_path
