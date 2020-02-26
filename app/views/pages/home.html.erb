@@ -1,10 +1,4 @@
 <form action="/items">
-  <select name="portions" id="portions" class="home-form">
-    <% @portions.each do |portion| %>
-      <option value="<%= portion %>"><%= portion %></option>
-    <% end %>
-  </select>
-
   <select name="flavour" id="flavour" class="home-form">
     <% @flavours.each do |flavour| %>
       <option value="<%= flavour %>"><%= flavour %></option>
@@ -16,10 +10,13 @@
       <option value="<%= occasion %>"><%= occasion %></option>
     <% end %>
   </select>
-  <select name="portions" id="portions">
+
+  <select name="portions" id="portions" class="home-form">
     <% @portions.each do |portion| %>
       <option value="<%= portion %>"><%= portion %></option>
     <% end %>
+  </select>
+
   <input type="submit">
 </form>
 
@@ -30,8 +27,9 @@
     <% if i.photo.attached? %>
       <%= cl_image_tag i.photo.key, height: 300, crop: :fill %>
     <% end %>
-    <p><%= i.flavour %></p>
+    <p><%= link_to i.name, item_path(i) %></p>
     <p><%= i.description %></p>
+    <p><%= i.cost %> £</p>
   </li>
   <% end %>
 </ul>

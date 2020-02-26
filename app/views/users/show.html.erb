@@ -7,14 +7,14 @@
 <h3>Your orders!</h3>
 <ul>
 <% @user.orders.each do |order| %>
-<li>Your ordered cake: <%= order.item.flavour %><br> Your message to the baker: <%= order.description %> </li>
+<li>Your ordered cake: <%= order.item.name %><br> Your message to the baker: <%= order.description %> </li>
 <% end %>
 </ul>
 
 <h3>Your cakes!</h3>
 <ul>
 <% @user.items.each do |item| %>
-<li>Your cake is <%= item.flavour %>. It will serve <%= item.portions %> people and the cake description is: <%= item.description %></li>
+<li>Your cake is <%= item.name %>. It will serve <%= item.portions %> people and the cake description is: <%= item.description %></li>
 <% end %>
 </ul>
 
