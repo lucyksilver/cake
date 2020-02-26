@@ -1,11 +1,17 @@
 <form action="/items">
-  <select name="flavour" id="flavour">
+  <select name="portions" id="portions" class="home-form">
+    <% @portions.each do |portion| %>
+      <option value="<%= portion %>"><%= portion %></option>
+    <% end %>
+  </select>
+  
+  <select name="flavour" id="flavour" class="home-form">
     <% @flavours.each do |flavour| %>
       <option value="<%= flavour %>"><%= flavour %></option>
     <% end %>
   </select>
-  </select>
-  <select name="occasion" id="occasion">
+ 
+  <select name="occasion" id="occasion" class="home-form">
     <% @occasions.each do |occasion| %>
       <option value="<%= occasion %>"><%= occasion %></option>
     <% end %>
