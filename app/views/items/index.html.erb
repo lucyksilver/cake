@@ -1,8 +1,9 @@
 <ul>
   <% @items.each do |item| %>
     <li>
-      <p><%= link_to item.flavour, item_path(item)%></p>
+      <p><%= link_to item.name, item_path(item)%></p>
       <%#= cl_image_tag item.photo.key, height: 300, crop: :fill %>
+      <p><%= item.description %></p>
       <p><%= item.occasion %></p>
       <p><%= item.portions %></p>
     </li>
