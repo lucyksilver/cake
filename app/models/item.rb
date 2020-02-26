@@ -1,6 +1,8 @@
 class Item < ApplicationRecord
+  has_one_attached :photo
   has_many :orders
   belongs_to :user
+
 
   PORTIONS = ["1 - 4", "5 - 8", "9 - 14", "15 - 24", "25 - 99", "100+"]
   OCCASIONS = ["Wedding Cake", "Birthday Cake", "Cupcakes", "Christmas Cake", "Anniversary Cake", "Valentines Cake", "Children’s Cake", "Other"]
