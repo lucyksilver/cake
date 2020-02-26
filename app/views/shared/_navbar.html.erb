@@ -3,7 +3,7 @@
     <h2 class="nav-logo">CAKE</h2>
   <% end %>
   <% if user_signed_in? %>
-    <div>
+    <div class="nav-item dropdown">
       <%= current_user.name %>
       <% if current_user.avatar.attached? %>
         <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
