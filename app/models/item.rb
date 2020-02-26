@@ -15,4 +15,5 @@ class Item < ApplicationRecord
   validates :portions, presence: true, inclusion: { in: PORTIONS }
   validates :occasion, presence: true, inclusion: { in: OCCASIONS }
   validates :description, presence: true
+  validates :name, presence: true
 end
