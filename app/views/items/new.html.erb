@@ -1,7 +1,7 @@
 <h1>Add a Baked Good!</h1>
 <%= simple_form_for @item do |f| %>
   <%= f.input :name %>
-  <%= f.input :flavour %>
+  <%= f.input :flavour , collection: $flavours %> %>
   <%= f.input :occasion, collection: $occasions %>
   <%= f.input :portions, collection: $portions %>
   <%= f.input :description %>
