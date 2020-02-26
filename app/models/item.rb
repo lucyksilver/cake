@@ -5,7 +5,7 @@ class Item < ApplicationRecord
 
   FLAVOURS = ["Vanilla", "Chocolate", "Lemon", "Strawberry", "Fruit", "Coffee", "Walnut", "Carrot", "Red Velvet", " Other"]
   PORTIONS = ["1-5", "5-10", "10-15", "15+", "25+", "50+", "75+", "100+"]
-  OCCASIONS = ["Wedding", "Birthday", "Christmas", "Anniversary", "Valentines", "Children’s", "Other"]
+  OCCASIONS = ["Wedding", "Birthday", "Christmas", "Anniversary", "Valentines", "Children’s Party", "Other"]
 
   $occasions = OCCASIONS
   $portions = PORTIONS
