@@ -2,7 +2,6 @@
   color: $base;
 }
 
-
 #navbarDropdown {
   cursor: pointer;
 }
@@ -10,4 +9,15 @@
 .nav-logo {
   color: $base;
   font-weight: 600;
+}
+
+.navbar {
+  color: $base;
+}
+
+.dropdown-menu {
+  background-color: $base;
+  border-radius: 5px;
+  border-style: none;
+  margin-right: 15px;
 }
