@@ -4,16 +4,22 @@
       <option value="<%= portion %>"><%= portion %></option>
     <% end %>
   </select>
+  
   <select name="flavour" id="flavour" class="home-form">
     <% @flavours.each do |flavour| %>
       <option value="<%= flavour %>"><%= flavour %></option>
     <% end %>
   </select>
+ 
   <select name="occasion" id="occasion" class="home-form">
     <% @occasions.each do |occasion| %>
       <option value="<%= occasion %>"><%= occasion %></option>
     <% end %>
   </select>
+  <select name="portions" id="portions">
+    <% @portions.each do |portion| %>
+      <option value="<%= portion %>"><%= portion %></option>
+    <% end %>
   <input type="submit">
 </form>
 
