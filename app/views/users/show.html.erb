@@ -1,6 +1,8 @@
 <h2>Your profile</h2>
 <%= @user.name %>
 
+<%= cl_image_tag @user.avatar.key, height: 300, crop: :fill %>
+
 <h3>Your orders!</h3>
 <ul>
 <% @user.orders.each do |order| %>

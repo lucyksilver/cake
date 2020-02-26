@@ -21,6 +21,7 @@
 <ul>
   <% @items.sample(3).each do |i| %>
   <li>
+    <%= cl_image_tag i.photo.key, height: 300, crop: :fill %>
     <p><%= i.flavour %></p>
     <p><%= i.description %></p>
   </li>
