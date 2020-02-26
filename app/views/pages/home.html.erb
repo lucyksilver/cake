@@ -28,8 +28,12 @@
 <ul>
   <% @items.sample(3).each do |i| %>
   <li>
-    <p><%= i.flavour %></p>
+    <% if i.photo.attached? %>
+      <%= cl_image_tag i.photo.key, height: 300, crop: :fill %>
+    <% end %>
+    <p><%= link_to i.name, item_path(i) %></p>
     <p><%= i.description %></p>
+    <p><%= i.cost %> £</p>
   </li>
   <% end %>
 </ul>
