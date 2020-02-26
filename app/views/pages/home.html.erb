@@ -4,13 +4,13 @@
       <option value="<%= portion %>"><%= portion %></option>
     <% end %>
   </select>
-  
+
   <select name="flavour" id="flavour" class="home-form">
     <% @flavours.each do |flavour| %>
       <option value="<%= flavour %>"><%= flavour %></option>
     <% end %>
   </select>
- 
+
   <select name="occasion" id="occasion" class="home-form">
     <% @occasions.each do |occasion| %>
       <option value="<%= occasion %>"><%= occasion %></option>
@@ -27,7 +27,9 @@
 <ul>
   <% @items.sample(3).each do |i| %>
   <li>
-    <%= cl_image_tag i.photo.key, height: 300, crop: :fill %>
+    <% if i.photo.attached? %>
+      <%= cl_image_tag i.photo.key, height: 300, crop: :fill %>
+    <% end %>
     <p><%= i.flavour %></p>
     <p><%= i.description %></p>
   </li>
