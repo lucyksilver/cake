@@ -2,7 +2,9 @@
 <%= @user.name %>
 <%= @user.about_me %>
 
+<% if @user.avatar.attached? %>
 <%= cl_image_tag @user.avatar.key, height: 300, crop: :fill %>
+<% end %>
 
 <h3>Your orders!</h3>
 <ul>
