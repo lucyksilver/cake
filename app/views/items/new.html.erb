@@ -1,11 +1,30 @@
-<h1>Add a Baked Good!</h1>
-<%= simple_form_for @item do |f| %>
-  <%= f.input :name %>
-  <%= f.input :flavour, collection: $flavours %>
-  <%= f.input :occasion, collection: $occasions %>
-  <%= f.input :portions, collection: $portions %>
-  <%= f.input :description %>
-  <%= f.input :cost %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
+<div class="container-new">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <h1>Add a Baked Good!</h1>
+      <div class="form-group string required item_name item">
+          <label class="string required" for="item_name">Name <abbr title="required">*</abbr></label>
+          <input class="form-control string required" type="text" name="item[name]" id="item_name">
+      </div>
+      <%= simple_form_for @item do |f| %>
+        <div class="form-group select required item_flavour item">
+          <label class="select required" for="item_flavour">Flavour <abbr title="required">*</abbr></label>
+          <select class="form-control select required" name="item[flavour]" id="item_flavour">
+          <option value=""></option>
+          <% $flavours.each do |flavour| %>
+          <option value="<%= flavour %>"><%= flavour %></option>
+          <% end %>
+          </select>
+        </div>
+
+        <%= f.input :occasion, collection: $occasions %>
+        <%= f.input :portions, collection: $portions %>
+        <%= f.input :description %>
+        <%= f.input :cost %>
+        <%= f.input :photo, as: :file %>
+        <%= f.submit %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
