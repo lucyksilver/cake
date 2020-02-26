@@ -1,0 +1,15 @@
+.cards-home {
+  display: flex;
+  justify-content: space-around;
+  background-color: transparent;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+.card-home {
+  background-color: $base;
+  padding: 40px;
+}
+
+
+
