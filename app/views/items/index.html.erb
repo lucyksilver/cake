@@ -2,7 +2,7 @@
   <% @items.each do |item| %>
     <li>
       <p><%= link_to item.flavour, item_path(item)%></p>
-      <%#= cl_image_tag item.photo.key, height: 300, crop: :fill %>
+      <%= cl_image_tag item.photo.key, height: 300, crop: :fill %>
       <p><%= item.occasion %></p>
       <p><%= item.portions %></p>
     </li>
