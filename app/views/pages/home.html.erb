@@ -21,7 +21,8 @@
       </form>
     </div>
    </div>
-   <div>
+  </div>
+  <div class="cards-box">
 
     <h2 class="cards-home-title">Featured cakes</h2>
 
@@ -32,7 +33,7 @@
           <% if i.photo.attached? %>
             <%= cl_image_tag i.photo.key, height: 300, crop: :fill %>
           <% end %>
-          <p><%= link_to i.name, item_path(i) %></p>
+          <p><%= link_to i.name, item_path(i), class: "card-home-link" %></p>
           <p><%= i.description %></p>
           <p>£<%= i.cost %></p>
         </div>
@@ -41,6 +42,6 @@
 
 
     <%= link_to "View all", items_path %>
-   </div>
   </div>
+
 

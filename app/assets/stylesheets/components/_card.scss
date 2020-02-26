@@ -4,13 +4,19 @@
   background-color: transparent;
   margin-left: 150px;
   margin-right: 150px;
+  text-decoration: none;
 }
 
 .card-home {
   background-color: $base;
   padding: 40px;
   border-radius: 7px;
+  text-decoration: none;
+  color: $background-colour;
 }
 
+.card-home-link {
+  color: $background-colour;
+}
 
 
