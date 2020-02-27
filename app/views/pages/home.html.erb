@@ -28,14 +28,21 @@
 
 
     <div class="cards-home">
-      <% @items.sample(3).each do |i| %>
+      <% @items.last(3).each do |i| %>
         <div class="card-home">
           <% if i.photo.attached? %>
-            <%= cl_image_tag i.photo.key, height: 300, crop: :fill %>
+            <div class="card-home-image" style="background-image: url('https://res.cloudinary.com/dtoehsudt/image/upload/v1582804201/<%= i.photo.key %>')">
+            </div>
+          <% else %>
+            <div class="card-home-image-d"><h2 class="home-logo">CAKE</h2>
+            </div>
+            <%#= cl_image_tag i.photo.key, height: 300, crop: :fill %>
           <% end %>
-          <p><%= link_to i.name, item_path(i), class: "card-home-link" %></p>
-          <p class="card-text"><%= i.description %></p>
-          <p class="card-text">£<%= i.cost %></p>
+          <p><%= link_to i.name.capitalize, item_path(i), class: "card-home-link" %></p>
+          <div class="card-price-btn">
+            <p class="card-text price">£<%= i.cost %></p>
+            <p class="link-home-btn"><%= link_to "More info", item_path(i), class: "card-home-link2" %></p>
+          </div>
         </div>
       <% end %>
     </div>
