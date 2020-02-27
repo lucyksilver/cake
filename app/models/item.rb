@@ -4,8 +4,8 @@ class Item < ApplicationRecord
   belongs_to :user
 
   include PgSearch::Model
-    pg_search_scope :search_by_name_and_flavour,
-      against: [ :name, :flavour ],
+    pg_search_scope :search_by_flavour_by_occasion_and_by_portions,
+      against: [ :flavour, :occasion, :portions ],
       using: {
         tsearch: { prefix: true }
     }

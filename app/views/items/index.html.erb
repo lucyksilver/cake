@@ -1,20 +1,26 @@
-<form action="" id="search_bar">
+<!-- <form action="" id="search_bar">
   <input type="text" id="search_text">
   <input type="submit">
-</form>
+</form> -->
 
-<ul>
-  <% @items.each do |item| %>
-    <% if item.user != current_user %>
-    <li>
-        <p><%= link_to item.name, item_path(item)%></p>
-        <% if item.photo.attached? %>
-          <%= cl_image_tag item.photo.key, height: 300, crop: :fill %>
-        <% end %>
-        <p><%= item.description %></p>
-        <p><%= item.occasion %></p>
-        <p><%= item.portions %></p>
-    </li>
-    <% end %>
+  <%= form_tag items_path, method: :get do %>
+    <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a cake"
+     %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
-</ul>
+
+<%# if @items.empty? %>
+  <!-- <h1>Nothing to see here</h1> -->
+  <%#= link_to "View all cakes", root_path %>
+<%# end %>
+
+<% @items.each do |item| %>
+  <%= item.flavour %>
+  <%= item.portions %>
+  <%= item.occasion %>
+<% end %>
+
+

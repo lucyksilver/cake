@@ -1,19 +1,22 @@
 class ItemsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
+
   def index
-    if params[:search].blank?
-      @items = Item.all
-      # @items = @items.where(name: params[:name]) if params[:name]
-      # @items = @items.where(flavour: params[:flavour]) if params[:flavour]
-      # @items = @items.where(portions: params[:portions]) if params[:portions]
-      # @items = @items.where(occasion: params[:occasion]) if params[:occasion]
+    if params[:query].present?
+      sql_query = " \
+        flavour ILIKE :query \
+        OR occasion ILIKE :query \
+        OR portions ILIKE :query \
+      "
+      @items = Item.where(sql_query, query: "%#{params[:query]}%")
     else
-      @items = Item.search_by_name_and_flavour(params[:search])
+      @items = Item.all
     end
   end
 
   def show
     @item = Item.find(params[:id])
+    # @item = @items.where(portions: params[:portions], flavour: params[:flavour], occasion: params[:occasion]).first
   end
 
   def new
