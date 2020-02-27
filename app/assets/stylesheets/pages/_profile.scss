@@ -1,3 +1,7 @@
+.profile-container {
+  max-width: 1000px;
+}
+
 .profile {
   display: flex;
   justify-content: flex-start;
@@ -6,17 +10,64 @@
 
 .about-me-avatar {
   border-radius: 50%;
-  max-height: 150px;
+  max-height: 120px;
   margin-right: 20px;
 }
 
 .edit-link {
-  font-size: 16px;
   text-decoration: none;
   color: $base;
 }
 
-.edit-link:hover{
-  color: $link-hover;
+.edit-link:hover {
   text-decoration: none;
+  color: $link-hover;
+}
+.cards-profile {
+  display: flex;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+
+.card-profile {
+  background-color: $base;
+  width: 250px;
+  padding: 10px;
+  border-radius: 7px;
+  text-decoration: none;
+  color: $background-colour;
+  margin-bottom: 25px;
+  // margin-left: 25px;
+  margin-right: 35px;
+}
+
+.card-profile-image {
+  height: 150px;
+  width: 220px;
+  margin: 0 auto;
+  background-size: cover;
+  background-position: center;
+  border-radius: 7px;
+  margin-bottom: 16px;
+}
+
+.card-profile-image-d {
+  height: 150px;
+  width: 220px;
+  margin: 0 auto;
+  background-size: cover;
+  border: solid 1px;
+  border-color: $background-colour;
+  background-position: center;
+  border-radius: 7px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-dark {
+  display: flex;
+  justify-content: center;
+
 }
