@@ -1,7 +1,49 @@
+.container-new {
+  margin-bottom: 100px;
+}
+
 h1 {
   color: $base;
+  margin-bottom: 20px;
 }
 
 .item {
   color: $base;
+  margin-bottom: 20px;
 }
+
+.item-bar {
+  background-color: $base;
+  border: none;
+  border-radius: 5px;
+}
+
+.upload-photo {
+  border: 1px solid #d3d3d3;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 500;
+  background: $base;
+  border-radius: 5px;
+  color: #0C2121;
+  margin-top: 9px;
+  width: 145px;
+}
+
+
+.submit-btn {
+  border: 2px solid $base;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 500;
+  background: #0b2121;
+  border-radius: 5px;
+  color: $base;
+  margin-top: 9px;
+  width: 145px;
+  font-weight: 700;
+}
+
+
+
+
