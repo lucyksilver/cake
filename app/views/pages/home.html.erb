@@ -1,24 +1,32 @@
   <div class="home-banner" style="background-image: url(<%= image_path "background.jpg" %>);">
    <div class="home-form form-edit">
     <h3 class="text-center text-home">Have your cake and eat it</h3>
-     <div class="form-bow">
+     <div class="form-bow text-left">
       <form action="/items">
-        <select name="portions" id="portions" class="home-form-item" placeholder="Portions">
-          <label>Flavour</label>
-          <% @portions.each do |portion| %>
-            <option value="<%= portion %>"><%= portion %></option>
-          <% end %>
-        </select>
+        <div class= 'form-spacing'>
+        <label for="">Select your flavour</label>
         <select name="flavour" id="flavour" class="home-form-item">
           <% @flavours.each do |flavour| %>
             <option value="<%= flavour %>"><%= flavour %></option>
           <% end %>
         </select>
+      </div>
+      <div class= 'form-spacing'>
+        <label for="">What's the occasion?</label>
         <select name="occasion" id="occasion" class="home-form-item">
           <% @occasions.each do |occasion| %>
             <option value="<%= occasion %>"><%= occasion %></option>
           <% end %>
         </select>
+      </div>
+      <div class= 'form-spacing'>
+        <label for="">Choose your portion size</label>
+        <select name="portions" id="portions" class="home-form-item" placeholder="Portions">
+          <% @portions.each do |portion| %>
+            <option value="<%= portion %>"><%= portion %></option>
+          <% end %>
+        </select>
+      </div>
         <input class= "submit-btn" type="submit" class="home-form-item">
       </form>
     </div>
@@ -44,7 +52,7 @@
     </div>
 
 
-    <h3 class="index-link-home"><%= link_to "View all", items_path, class: "index-link-home-text" %></h3>
+    <h3 class="index-link-home"><%= link_to "View all", items_path, class: "index-link-home-text text-center" %></h3>
   </div>
 
 

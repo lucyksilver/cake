@@ -39,9 +39,13 @@ h1 {
   background: #0b2121;
   border-radius: 5px;
   color: $base;
-  margin-top: 9px;
+  margin-top: 12px;
   width: 145px;
   font-weight: 700;
+  &:hover {
+    color: $link-hover;
+    border: 2px solid $link-hover;
+  }
 }
 
 
