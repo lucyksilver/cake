@@ -34,14 +34,14 @@
             <%= cl_image_tag i.photo.key, height: 300, crop: :fill %>
           <% end %>
           <p><%= link_to i.name, item_path(i), class: "card-home-link" %></p>
-          <p><%= i.description %></p>
-          <p>£<%= i.cost %></p>
+          <p class="card-text"><%= i.description %></p>
+          <p class="card-text">£<%= i.cost %></p>
         </div>
       <% end %>
     </div>
 
 
-    <%= link_to "View all", items_path %>
+    <h3 class="index-link-home"><%= link_to "View all", items_path, class: "index-link-home-text" %></h3>
   </div>
 
 

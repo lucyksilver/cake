@@ -15,6 +15,9 @@
 .nav-logo {
   color: $base;
   font-weight: 600;
+  &:hover {
+    color: $link-hover;
+  }
 }
 
 
