@@ -3,6 +3,13 @@ class Item < ApplicationRecord
   has_many :orders
   belongs_to :user
 
+  include PgSearch::Model
+    pg_search_scope :search_by_name_and_flavour,
+      against: [ :name, :flavour ],
+      using: {
+        tsearch: { prefix: true }
+    }
+
   FLAVOURS = ["Vanilla", "Chocolate", "Lemon", "Strawberry", "Fruit", "Coffee", "Walnut", "Carrot", "Red Velvet", " Other"]
   PORTIONS = ["1-5", "5-10", "10-15", "15+", "25+", "50+", "75+", "100+"]
   OCCASIONS = ["Wedding", "Birthday", "Christmas", "Anniversary", "Valentines", "Children’s Party", "Other"]

@@ -23,3 +23,9 @@ require("channels")
 // ----------------------------------------------------
 
 import "bootstrap";
+
+document.getElementById('search_bar').addEventListener('submit', event => {
+  event.preventDefault();
+  const searchTerm = document.getElementById('search_text').value;
+  window.location = "/items?search="+searchTerm
+})
