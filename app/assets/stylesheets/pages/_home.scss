@@ -28,7 +28,6 @@ body {
   border: 2px solid $base;
   padding: 8px 16px;
   cursor: pointer;
-  font-weight: 500;
   background: #0b2121;
   border-radius: 5px;
   color: $base;
@@ -36,7 +35,6 @@ body {
   width: 145px;
   font-weight: 700;
   &:hover {
-    text-decoration: none;
     color: $link-hover;
     border: 2px solid $link-hover;
   }
@@ -45,5 +43,10 @@ body {
   .text-home {
     padding-top: 20px;
     padding-bottom: 15px;
+  }
+
+  .form-spacing {
+    margin-top: 16px;
+    margin-bottom: 16px;
   }
 
