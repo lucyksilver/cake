@@ -20,13 +20,27 @@ body {
 .index-link-home {
   text-align: center;
   font-size: 20px;
+   margin-top:50px
 }
 
 .index-link-home-text {
   text-decoration: none;
+  border: 2px solid $base;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 500;
+  background: #0b2121;
+  border-radius: 5px;
   color: $base;
+  margin-top: 9px;
+  width: 145px;
+  font-weight: 700;
   &:hover {
     text-decoration: none;
     color: $link-hover;
+    border: 2px solid $link-hover;
+
   }
+
+
 }
