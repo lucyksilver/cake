@@ -2,14 +2,15 @@
   display: flex;
   justify-content: space-around;
   background-color: transparent;
-  margin-left: 150px;
-  margin-right: 150px;
-  text-decoration: none;
+  margin-left: 50px;
+  margin-right: 50px;
+  // text-decoration: none;
 }
 
 .card-home {
   background-color: $base;
-  padding: 40px;
+  width: 300px;
+  padding: 40px 40px 30px 40px;
   border-radius: 7px;
   text-decoration: none;
   color: $background-colour;
@@ -17,6 +18,15 @@
 
 .card-home-link {
   color: $background-colour;
+  font-weight: 600;
+  &:hover {
+    text-decoration: none;
+    color: $link-hover;
+  }
+}
+
+.card-text {
+  margin-bottom: 10px;
 }
 
 
