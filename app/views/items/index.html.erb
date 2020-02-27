@@ -1,13 +1,15 @@
 <ul>
   <% @items.each do |item| %>
+    <% if item.user != current_user %>
     <li>
-      <p><%= link_to item.name, item_path(item)%></p>
-      <% if item.photo.attached? %>
-      <%= cl_image_tag item.photo.key, height: 300, crop: :fill %>
-      <% end %>
-      <p><%= item.description %></p>
-      <p><%= item.occasion %></p>
-      <p><%= item.portions %></p>
+        <p><%= link_to item.name, item_path(item)%></p>
+        <% if item.photo.attached? %>
+          <%= cl_image_tag item.photo.key, height: 300, crop: :fill %>
+        <% end %>
+        <p><%= item.description %></p>
+        <p><%= item.occasion %></p>
+        <p><%= item.portions %></p>
     </li>
+    <% end %>
   <% end %>
 </ul>
