@@ -1,26 +1,62 @@
 <div class="container-new">
   <div class="row justify-content-center">
     <div class="col-6">
-      <h1>Add a Baked Good!</h1>
+      <h1 class="text-center">Add a Baked Good!</h1>
 
       <%= simple_form_for @item do |f| %>
-        <%= f.input :name %>
-        <div class="form-group select required item_flavour item">
-          <label class="select required" for="item_flavour">Flavour <abbr title="required">*</abbr></label>
-          <select class="form-control select required" name="item[flavour]" id="item_flavour">
-          <option value=""></option>
-          <% $flavours.each do |flavour| %>
-          <option value="<%= flavour %>"><%= flavour %></option>
-          <% end %>
-          </select>
+
+      <div class="form-group string required item_name item">
+        <label class="string required" for="item_name">Name<abbr title="required"></abbr></label>
+        <input class="form-control string required item-bar" type="text" name="item[name]" id="item_name">
+      </div>
+
+      <div class="form-group select required item_flavour item">
+        <label class="select required" for="item_flavour">Flavour <abbr title="required"></abbr></label>
+        <select class="form-control item-bar select required" name="item[flavour]" id="item_flavour">
+        <option value=""></option>
+        <% $flavours.each do |flavour| %>
+        <option value="<%= flavour %>"><%= flavour %></option>
+        <% end %>
+        </select>
+      </div>
+
+      <div class="form-group select required item_occasion item">
+        <label class="select required" for="item_occasion">Occasion <abbr title="required"></abbr></label>
+        <select class="form-control select required item-bar" name="item[occasion]" id="item_occasion"><option value=""></option>
+          <option value="Wedding">Wedding</option>
+          <option value="Birthday">Birthday</option>
+          <option value="Christmas">Christmas</option>
+          <option value="Anniversary">Anniversary</option>
+          <option value="Valentines">Valentines</option>
+          <option value="Children’s Party">Children’s Party</option>
+          <option value="Other">Other</option></select>
         </div>
 
-        <%= f.input :occasion, collection: $occasions %>
-        <%= f.input :portions, collection: $portions %>
-        <%= f.input :description %>
-        <%= f.input :cost %>
-        <%= f.input :photo, as: :file %>
-        <%= f.submit %>
+        <div class="form-group select required item_portions item">
+          <label class="select required" for="item_portions">Portions <abbr title="required"></abbr></label>
+          <select class="form-control select required item-bar" name="item[portions]" id="item_portions"><option value=""></option>
+            <option value="1-5">1-5</option>
+            <option value="5-10">5-10</option>
+            <option value="10-15">10-15</option>
+            <option value="15+">15+</option>
+            <option value="25+">25+</option>
+            <option value="50+">50+</option>
+            <option value="75+">75+</option>
+            <option value="100+">100+</option></select>
+        </div>
+
+        <div class="form-group text required item_description item">
+          <label class="text required" for="item_description">Description <abbr title="required"></abbr></label>
+          <textarea class="form-control text required item-bar" name="item[description]" id="item_description"></textarea>
+        </div>
+
+        <div class="form-group float required item_cost item">
+          <label class="float required" for="item_cost">Cost <abbr title="required"></abbr></label>
+          <input class="form-control numeric float required item-bar" type="number" step="any" name="item[cost]" id="item_cost">
+        </div>
+
+        <%= f.input :photo, input_html: { class: 'd-none' }, label_html: { class: 'upload-photo'}, label: 'Upload a photo' %>
+        <input class="submit-btn" type="submit" name="commit" value="Sell your cake" data-disable-with="Create Item">
       <% end %>
 
     </div>
