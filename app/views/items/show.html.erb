@@ -3,4 +3,10 @@
   <%= cl_image_tag @item.photo.key, height: 300, crop: :fill %>
 <% end %>
 <p><%= @item.description %></p>
+<% if @item.user == current_user %>
+<p><%= link_to 'Delete your cake!', item_delete_path(@item), method: :delete  %></p>
+<p><%= link_to 'Edit your cake!', edit_item_path %></p>
+<% else %>
 <%= link_to "Order this cake!", new_item_order_path(@item) %>
+<% end %>
+
