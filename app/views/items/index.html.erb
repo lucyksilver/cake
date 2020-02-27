@@ -12,15 +12,19 @@
     <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
 
-<%# if @items.empty? %>
-  <!-- <h1>Nothing to see here</h1> -->
-  <%#= link_to "View all cakes", root_path %>
-<%# end %>
+<% if @items.empty? %>
+  <h1>Nothing to see here</h1>
+  <%= link_to "View all cakes", items_path %>
+<% end %>
 
 <% @items.each do |item| %>
-  <%= item.flavour %>
-  <%= item.portions %>
-  <%= item.occasion %>
+  <p>
+    <strong><%= item.name %></strong>
+    <%= item.flavour %>
+    <%= item.portions %>
+    <%= item.occasion %>
+  </p>
+
 <% end %>
 
 

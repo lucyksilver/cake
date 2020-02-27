@@ -7,31 +7,12 @@
 
 
 
-      <%= form_tag items_path, method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Find by flavour"
-        %>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
-      <% end %>
+      <%= simple_form_for :search, url: items_path, method: :get do |f| %>
+        <%= f.input :flavour, label: "Choose your flavour", collection: $flavours %>
+        <%= f.input :occasion, label: "Choose your occasion", collection: $occasions %>
+        <%= f.input :portions, label: "Choose your portions", collection: $portions %>
+        <%= f.submit :search, class: "btn btn-primary" %>
 
-        <%= form_tag items_path, method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Find a occasion"
-        %>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
-      <% end %>
-
-       <%= form_tag items_path, method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Find a portion size"
-        %>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
 
 

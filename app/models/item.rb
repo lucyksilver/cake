@@ -4,8 +4,8 @@ class Item < ApplicationRecord
   belongs_to :user
 
   include PgSearch::Model
-    pg_search_scope :search_by_flavour_by_occasion_and_by_portions,
-      against: [ :flavour, :occasion, :portions ],
+    pg_search_scope :global_search,
+      against: [ :name, :flavour, :occasion ],
       using: {
         tsearch: { prefix: true }
     }
@@ -24,4 +24,8 @@ class Item < ApplicationRecord
   validates :occasion, presence: true, inclusion: { in: OCCASIONS }
   validates :portions, presence: true, inclusion: { in: PORTIONS }
   validates :description, presence: true
+
+  def search(hash)
+    return where(hash)
+  end
 end
