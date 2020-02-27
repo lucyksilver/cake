@@ -1,6 +1,9 @@
 <h1>Your order!</h1>
 
 <h3>Now you can have your <%= @order.item.name%> and eat it!</h3>
+ <% if @order.item.photo.attached? %>
+  <%= cl_image_tag @order.item.photo.key, height: 300, crop: :fill %>
+  <% end %>
 <ul>
 <li> The perfect occasion to enjoy your <%= @order.item.name%> is <%= @order.item.occasion %></li>
 <li>Your <%= @order.item.flavour%> will feed <%= @order.item.portions %> lucky people</li>
