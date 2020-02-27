@@ -1,8 +1,10 @@
   <div class="home-banner" style="background-image: url(<%= image_path "background.jpg" %>);">
-   <div class="home-form">
+   <div class="home-form form-edit">
+    <h3 class="text-center text-home">Have your cake and eat it</h3>
      <div class="form-bow">
       <form action="/items">
         <select name="portions" id="portions" class="home-form-item" placeholder="Portions">
+          <label>Flavour</label>
           <% @portions.each do |portion| %>
             <option value="<%= portion %>"><%= portion %></option>
           <% end %>
@@ -17,12 +19,13 @@
             <option value="<%= occasion %>"><%= occasion %></option>
           <% end %>
         </select>
-        <input type="submit" class="home-form-item">
+        <input class= "submit-btn" type="submit" class="home-form-item">
       </form>
     </div>
    </div>
   </div>
   <div class="cards-box">
+
 
     <h2 class="cards-home-title">Featured cakes</h2>
 

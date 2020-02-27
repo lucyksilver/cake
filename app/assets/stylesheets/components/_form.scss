@@ -4,6 +4,7 @@
   width: 300px;
   border: 0px;
   background-color: $base;
+
 }
 
 
@@ -11,5 +12,8 @@
   display: inline-block;
   text-align: right;
   margin-right: 800px;
-  margin-top: 80px;
+  margin-top: 120px;
+  padding: 20px 30px 30px 20px;
+  border: $base 1px solid;
 }
+
