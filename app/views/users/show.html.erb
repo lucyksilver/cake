@@ -1,9 +1,8 @@
-<h2>Your profile</h2>
-<%= @user.name %>
+<h1><%= @user.name %></h1>
 <%= @user.about_me %>
 
 <% if @user.avatar.attached? %>
-<%= cl_image_tag @user.avatar.key, height: 300, crop: :fill %>
+  <%= cl_image_tag @user.avatar.key, height: 300, crop: :fill %>
 <% end %>
 
 <h3>Your orders!</h3>
