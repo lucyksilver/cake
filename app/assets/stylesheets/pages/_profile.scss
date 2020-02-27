@@ -1,0 +1,22 @@
+.profile {
+  display: flex;
+  justify-content: flex-start;
+  margin: 15px;
+}
+
+.about-me-avatar {
+  border-radius: 50%;
+  max-height: 150px;
+  margin-right: 20px;
+}
+
+.edit-link {
+  font-size: 16px;
+  text-decoration: none;
+  color: $base;
+}
+
+.edit-link:hover{
+  color: $link-hover;
+  text-decoration: none;
+}
