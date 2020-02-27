@@ -10,23 +10,93 @@
 .card-home {
   background-color: $base;
   width: 300px;
-  padding: 40px 40px 30px 40px;
+  padding: 20px 20px 20px 20px;
   border-radius: 7px;
   text-decoration: none;
   color: $background-colour;
+  margin-bottom: 50px;
 }
 
 .card-home-link {
   color: $background-colour;
   font-weight: 600;
+  font-size: 18px;
+  padding: 5px;
+  border-color: $background-colour;
+
+  &:hover {
+    text-decoration: none;
+    border-color: $link-hover;
+    color: $link-hover;
+    transition: 0.15s;
+  }
+}
+
+.card-home-link2 {
+  float: right;
+  border: 2px solid $base;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 500;
+  background: $background-colour;
+  border-radius: 5px;
+  color: $base;
+  margin-top: 0px;
+
   &:hover {
     text-decoration: none;
     color: $link-hover;
+    transition: 0.15s;
   }
 }
 
 .card-text {
   margin-bottom: 10px;
+  margin-left: 5px;
 }
 
+.price {
+  margin-bottom: 0;
+}
+
+.card-home-image {
+  height: 200px;
+  width: 260px;
+  margin: 0 auto;
+  background-size: cover;
+  background-position: center;
+  border-radius: 7px;
+  margin-bottom: 16px;
+}
+
+.card-home-image-d {
+  height: 200px;
+  width: 260px;
+  margin: 0 auto;
+  background-size: cover;
+  border: solid 1px;
+  border-color: $background-colour;
+  background-position: center;
+  border-radius: 7px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-price-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link-home-btn {
+  margin-bottom: 0;
+}
+
+.home-logo {
+  color: $background-colour;
+  font-size: 60px;
+  font-weight: 600;
+}
 
