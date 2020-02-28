@@ -3,6 +3,8 @@
 }
 
 .item-right-half {
+  position: relative;
+  z-index: -1;
   width: 50vw;
   height: 100vh;
   background-size: cover;
@@ -11,6 +13,7 @@
 
 .item-left-half {
   position: relative;
+  z-index: 1;
   width: 50vw;
   height: 100vh;
   display: flex;
@@ -30,6 +33,7 @@
 }
 .big-middle-button {
   position: absolute;
+  z-index: 5;
   bottom: 100px;
   right: -40px;
   width: 80px;
@@ -49,6 +53,7 @@
 
 .big-middle-button-d {
   position: absolute;
+  z-index: 5;
   bottom: 100px;
   right: -40px;
   width: 80px;
