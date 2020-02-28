@@ -1,26 +1,33 @@
 .cards-home {
-  display: flex;
-  justify-content: space-around;
-  background-color: transparent;
-  margin-left: 50px;
-  margin-right: 50px;
-  // text-decoration: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 60px;
 }
 
+
 .card-home {
+  position: relative;
   background-color: $base;
-  max-width: 300px;
-  padding: 20px 20px 20px 20px;
+  padding: 20px;
   border-radius: 7px;
   text-decoration: none;
   color: $background-colour;
-  margin-bottom: 50px;
   transition: 0.3s;
   &:hover {
     opacity: 0.9;
     transform: scale(1.1);
   }
 }
+
+.card-link {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
 
 .card-home-link {
   color: $background-colour;
@@ -66,7 +73,6 @@
 
 .card-home-image {
   height: 200px;
-  width: 260px;
   margin: 0 auto;
   background-size: cover;
   background-position: center;
