@@ -28,21 +28,29 @@
 
 <div class="cards-home row">
       <% @items.each do |i| %>
-        <div class="card-home col-3">
-          <% if i.photo.attached? %>
-            <div class="card-home-image" style="background-image: url('https://res.cloudinary.com/dtoehsudt/image/upload/v1582804201/<%= i.photo.key %>')">
+        <%= link_to item_path(i) do  %>
+          <div class="card-home col-3">
+            <% if i.photo.attached? %>
+              <div class="card-home-image" style="background-image: url('https://res.cloudinary.com/dtoehsudt/image/upload/v1582804201/<%= i.photo.key %>')">
+              </div>
+            <% else %>
+              <div class="card-home-image-d"><h2 class="home-logo">CAKE</h2>
+              </div>
+            <% end %>
+            <p><%= link_to i.name.capitalize, item_path(i), class: "card-home-link" %></p>
+            <div class="card-price-btn">
+              <p>£<%= i.cost %></p>
+              <p class="card-portion"><%= i.portions %></p>
             </div>
-          <% else %>
-            <div class="card-home-image-d"><h2 class="home-logo">CAKE</h2>
-            </div>
-          <% end %>
-          <p><%= link_to i.name.capitalize, item_path(i), class: "card-home-link" %></p>
-          <div class="card-price-btn">
-            <p class="card-text price">£<%= i.cost %></p>
-            <p class="link-home-btn"><%= link_to "More info", item_path(i), class: "card-home-link2" %></p>
           </div>
-        </div>
+        <% end %>
       <% end %>
     </div>
 </div>
+
+
+
+
+
+
 

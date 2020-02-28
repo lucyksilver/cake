@@ -40,8 +40,8 @@ body {
   margin-top: 9px;
   width: 145px;
   font-weight: 700;
+  transition: 0.3s;
   &:hover {
-    transition: 0.15s;
     text-decoration: none;
     color: $link-hover;
     border: 2px solid $link-hover;
