@@ -1,16 +1,19 @@
-<div class="container">
-  <h1 class="mb-4">Your order!</h1>
+<div class="item-show-container">
+  <% if @order.item.photo.attached? %>
+    <div class="item-left-half" style="background-image: url('https://res.cloudinary.com/dtoehsudt/image/upload/v1582804201/<%= @order.item.photo.key %>')">
+    </div>
+  <% else %>
+    <div class="item-left-half no-img"><h2 class="home-logo">CAKE</h2>
+    </div>
+  <% end %>
 
-  <h3 class="mb-4">Now you can have your <%= @order.item.name%> and eat it!</h3>
-  <div class="card-product">
-    <% if @order.item.photo.attached? %>
-      <%= cl_image_tag @order.item.photo.key, crop: :fill, class: "card-product-img" %>
-    <% end %>
-    <div class="card-product-infos">
-      <p> The perfect occasion to enjoy your <%= @order.item.name%> is <%= @order.item.occasion %></p>
-      <p>Your <%= @order.item.flavour%> will feed <%= @order.item.portions %> lucky people</p>
-      <p>Your added message: <%= @order.description %></p>
+  <div class="item-right-half">
+    <div class="content">
+      <h1 class="mb-3">Your order</h1>
+      <h5 class="mb-3">Now you can have your <%= @order.item.name%> and eat it!</h5>
+      <p>Feeds <%= @order.item.portions %> lucky people.</p>
+      <p>Your message to the baker:</p>
+      <p><%= @order.description %></p>
     </div>
   </div>
-
 </div>

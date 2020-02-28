@@ -1,4 +1,4 @@
-<div class="navbar <%= "fixed-top w-100" if params[:controller] == 'items' && params[:action] == 'show' %>">
+<div class="navbar <%= "fixed-top w-100" if (params[:controller] == 'items' || params[:controller] == 'orders' && params[:action] == 'show') %>">
   <%= link_to root_path, class: "navbar-brand" do %>
     <h2 class="nav-logo">CAKE</h2>
   <% end %>
