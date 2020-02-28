@@ -2,17 +2,20 @@ class ItemsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
+    if user_signed_in?
+      @items = Item.where.not(user: current_user)
+    else
+      @items = Item.all
+    end
+
     if params[:search].present?
       # hash_search => {flavour: "Vanilla", portions: "10-15"}
       hash_search = params.require(:search).permit(:flavour, :occasion, :portions)
       hash_search.delete_if {|key, value| value == "" }
 
-      @items = Item.where(hash_search)
+      @items = @items.where(hash_search)
     elsif params[:query]
-      @items = Item.global_search(params[:query])
-    else
-
-      @items = Item.all
+      @items = @items.global_search(params[:query])
     end
   end
 
