@@ -1,50 +1,49 @@
-<div class="container">
-  <div class="profile">
-    <% if @user.avatar.attached? %>
+<div class="profile">
+  <% if @user.avatar.attached? %>
       <%= cl_image_tag @user.avatar.key, crop: :fill, class: "about-me-avatar" %>
     <% end %>
+  <div class="container">
+      <div class="">
+        <div class="about-me-info">
+          <h1><%= @user.name %></h1>
+          <p><%= @user.about_me %></p>
+          <p><%= link_to 'Edit your about me!', edit_user_path, class: "edit-link" %></p>
+        </div>
 
-    <div class="">
-      <div class="about-me-info">
-        <h1><%= @user.name %></h1>
-        <p><%= @user.about_me %></p>
-        <p><%= link_to 'Edit your about me!', edit_user_path, class: "edit-link" %></p>
-      </div>
+        <h3>Your orders!</h3>
+        <div class="cards-profile row">
+          <% @user.orders.each do |order| %>
+            <div class="card-profile col-3">
+              <% if order.item.photo.attached? %>
+                <div class="card-profile-image" style="background-image: url('https://res.cloudinary.com/dtoehsudt/image/upload/v1582804201/<%= order.item.photo.key %>')">
+                </div>
+              <% else %>
+                <div class="card-profile-image-d"><h2 class="home-logo">CAKE</h2>
+                </div>
+                <%#= cl_image_tag i.photo.key, height: 300, crop: :fill %>
+              <% end %>
+              <p><%= link_to order.item.name.capitalize, item_path(order.item), class: "card-home-link" %></p>
+              <p><%= link_to 'Show more', item_order_path(order), class: "btn btn-dark" %></p>
+            </div>
+          <% end %>
+        </div>
 
-      <h3>Your orders!</h3>
-      <div class="cards-profile row">
-        <% @user.orders.each do |order| %>
-          <div class="card-profile col-3">
-            <% if order.item.photo.attached? %>
-              <div class="card-profile-image" style="background-image: url('https://res.cloudinary.com/dtoehsudt/image/upload/v1582804201/<%= order.item.photo.key %>')">
-              </div>
-            <% else %>
-              <div class="card-profile-image-d"><h2 class="home-logo">CAKE</h2>
-              </div>
-              <%#= cl_image_tag i.photo.key, height: 300, crop: :fill %>
-            <% end %>
-            <p><%= link_to order.item.name.capitalize, item_path(order.item), class: "card-home-link" %></p>
-            <p><%= link_to 'Show more', item_order_path(order), class: "btn btn-dark" %></p>
-          </div>
-        <% end %>
+        <h3>Your cakes!</h3>
+        <div class="cards-profile row">
+          <% @user.items.each do |item| %>
+            <div class="card-profile col-3">
+              <% if item.photo.attached? %>
+                <div class="card-profile-image" style="background-image: url('https://res.cloudinary.com/dtoehsudt/image/upload/v1582804201/<%= item.photo.key %>')">
+                </div>
+              <% else %>
+                <div class="card-profile-image-d"><h2 class="home-logo">CAKE</h2>
+                </div>
+                <%#= cl_image_tag i.photo.key, height: 300, crop: :fill %>
+              <% end %>
+              <p><%= link_to item.name.capitalize, item_path(item), class: "card-home-link" %></p>
+            </div>
+          <% end %>
+        </div>
       </div>
-
-      <h3>Your cakes!</h3>
-      <div class="cards-profile">
-        <% @user.items.each do |item| %>
-          <div class="card-profile">
-            <% if item.photo.attached? %>
-              <div class="card-profile-image" style="background-image: url('https://res.cloudinary.com/dtoehsudt/image/upload/v1582804201/<%= item.photo.key %>')">
-              </div>
-            <% else %>
-              <div class="card-profile-image-d"><h2 class="home-logo">CAKE</h2>
-              </div>
-              <%#= cl_image_tag i.photo.key, height: 300, crop: :fill %>
-            <% end %>
-            <p><%= link_to item.name.capitalize, item_path(item), class: "card-home-link" %></p>
-          </div>
-        <% end %>
-      </div>
-    </div>
   </div>
 </div>
