@@ -5,6 +5,21 @@
   background-color: $base;
 
 }
+.search-bar-new {
+  padding: 16px 48px;
+}
+
+.search-index {
+  background-color: transparent;
+  border: none;
+  font-size: 45px;
+  &:focus {
+    color: white;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+  }
+}
 
 .home-form {
   display: inline-block;

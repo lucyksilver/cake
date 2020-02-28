@@ -8,10 +8,10 @@
 
 
       <%= simple_form_for :search, url: items_path, method: :get do |f| %>
-        <%= f.input :flavour, label: "Choose your flavour", collection: $flavours %>
-        <%= f.input :occasion, label: "Choose your occasion", collection: $occasions %>
-        <%= f.input :portions, label: "Choose your portions", collection: $portions %>
-        <%= f.submit :search, class: "btn btn-primary" %>
+        <%= f.input :flavour, label: "Choose your flavour", :required => false, collection: $flavours %>
+        <%= f.input :occasion, label: "Choose your occasion", :required => false, collection: $occasions %>
+        <%= f.input :portions, label: "How many people?", :required => false, collection: $portions %>
+        <%= f.submit :search, class: "submit-btn" %>
 
       <% end %>
 
