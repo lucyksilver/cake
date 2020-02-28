@@ -43,6 +43,7 @@ h1 {
   width: 145px;
   font-weight: 700;
   &:hover {
+    transition: 0.15s;
     color: $link-hover;
     border: 2px solid $link-hover;
   }
