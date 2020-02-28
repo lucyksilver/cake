@@ -1,15 +1,43 @@
-<h1><%= @item.name %></h1>
-<% if @item.photo.attached? %>
-  <div class="card-show-image" style="background-image: url('https://res.cloudinary.com/dtoehsudt/image/upload/v1582804201/<%= @item.photo.key %>')">
+<div class="item-show-container">
+  <div class="item-left-half">
+    <div class="content">
+      <h1><%= @item.name %></h1>
+      <p><%= @item.description %></p>
+      <div class="stats">
+        <div class="stat-pair">
+          <i class="fas fa-birthday-cake mr-2"></i> <span><%= @item.flavour %></span>
+        </div>
+        <div class="stat-pair">
+          <i class="fas fa-glass-cheers mr-2"></i> <span><%= @item.occasion %></span>
+        </div>
+        <div class="stat-pair">
+          <i class="fas fa-cheese mr-2"></i> <span><%= @item.portions %></span>
+        </div>
+      </div>
+      <% if @item.user == current_user %>
+        <p class="link-home-btn"><%= link_to 'Delete your cake!', item_delete_path(@item), method: :delete  %></p>
+      <% else %>
+        <%= link_to new_item_order_path(@item), class: "big-middle-button" do %>
+          <i class="fas fa-birthday-cake"></i>
+        <% end %>
+        </p>
+      <% end %>
+    </div>
+
   </div>
-<% else %>
-  <div class="card-show-image-d"><h2 class="home-logo">CAKE</h2>
-  </div>
-<% end %>
-<p><%= @item.description %></p>
-<% if @item.user == current_user %>
-  <p class="link-home-btn"><%= link_to 'Delete your cake!', item_delete_path(@item), method: :delete  %></p>
-<% else %>
-  <p class="link-home-btn"><%= link_to "Order this cake!", new_item_order_path(@item) %></p>
-<% end %>
+  <% if @item.photo.attached? %>
+    <div class="item-right-half" style="background-image: url('https://res.cloudinary.com/dtoehsudt/image/upload/v1582804201/<%= @item.photo.key %>')">
+    </div>
+  <% else %>
+    <div class="item-right-half no-img"><h2 class="home-logo">CAKE</h2>
+    </div>
+  <% end %>
+</div>
+
+
+
+
+
+
+
 
