@@ -1,0 +1,24 @@
+.card-show-image {
+  height: 400px;
+  width: 400px;
+
+  background-size: cover;
+  background-position: center;
+  border-radius: 7px;
+  margin-bottom: 16px;
+}
+
+.card-show-image-d {
+  height: 200px;
+  width: 260px;
+  margin: 0 auto;
+  background-size: cover;
+  border: solid 1px;
+  border-color: $background-colour;
+  background-position: center;
+  border-radius: 7px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

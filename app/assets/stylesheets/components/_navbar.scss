@@ -16,6 +16,7 @@
   color: $base;
   font-weight: 600;
   &:hover {
+    transition: 0.15s;
     color: $link-hover;
   }
 }
