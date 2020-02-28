@@ -1,40 +1,67 @@
 .profile {
   display: flex;
   justify-content: flex-start;
-  margin: 15px;
+  padding: 25px 0;
+  border-bottom: solid 1px $base;
 }
+
+.profile-text {
+  margin-bottom: 25px;
+}
+
 
 .about-me-avatar {
   border-radius: 50%;
   max-height: 150px;
   margin-right: 50px;
-  margin-left: 50px;
 }
 
-.edit-link {
-  text-decoration: none;
-  color: $base;
+.edit-section {
+  .edit-show-user {
+    opacity: 0;
+    transition: .3s;
+    float: right;
+    border: 2px solid $base;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: 500;
+    background: $background-colour;
+    border-radius: 5px;
+    color: $base;
+    margin-top: 0px;
+  }
+  &:hover {
+    .edit-show-user {
+      opacity: 1;
+      text-decoration: none;
+      float: right;
+      border: 2px solid $link-hover;
+      padding: 8px 16px;
+      cursor: pointer;
+      font-weight: 500;
+      background: $background-colour;
+      border-radius: 5px;
+      color: $link-hover;
+      margin-top: 0px;
+    }
+  }
 }
 
-.edit-link:hover {
-  text-decoration: none;
-  color: $link-hover;
-}
 .cards-profile {
-  display: flex;
-  justify-content: flex-start;
-  background-color: transparent;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 48px;
 }
 
 .card-profile {
   background-color: $base;
-  width: 250px;
+  // width: 250px;
   padding: 10px;
   border-radius: 7px;
   text-decoration: none;
   color: $background-colour;
-  margin-bottom: 25px;
-  margin: 20px 35px;
+  // margin-bottom: 25px;
+  // margin: 20px 35px;
 }
 
 .card-profile-image {
