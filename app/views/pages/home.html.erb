@@ -26,16 +26,18 @@
   <div class="cards-box">
 
 
-    <div class="cards-title-link">
-      <h2 class="cards-home-title">Featured cakes</h2>
-      <h3 class="index-link-home"><%= link_to "View all", items_path, class: "index-link-home-text text-center" %></h3>
-    </div>
 
+    <div class="container mb-5">
+      <div class="cards-title-link">
+        <h2 class="cards-home-title">Featured cakes</h2>
+        <h3 class="index-link-home"><%= link_to "View all", items_path, class: "index-link-home-text text-center" %></h3>
+      </div>
 
-    <div class="cards-home">
-      <% @items.last(3).each do |i| %>
-        <%= link_to item_path(i) do  %>
+      <div class="cards-home">
+        <% @items.last(3).each do |i| %>
           <div class="card-home">
+            <%= link_to "", item_path(i), class: "card-link"  %>
+
             <% if i.photo.attached? %>
               <div class="card-home-image" style="background-image: url('https://res.cloudinary.com/dtoehsudt/image/upload/v1582804201/<%= i.photo.key %>')">
               </div>
@@ -46,11 +48,11 @@
             <p><%= link_to i.name.capitalize, item_path(i), class: "card-home-link" %></p>
             <div class="card-price-btn">
               <p >£<%= i.cost %></p>
-              <p class="card-portion"><%= i.portions %></p>
+              <p class="card-portion">Portions: <%= i.portions %></p>
             </div>
           </div>
         <% end %>
-      <% end %>
+      </div>
     </div>
 
   </div>

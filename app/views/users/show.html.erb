@@ -12,39 +12,50 @@
     </div>
   </div>
 
-  <h3 class="mb-5 mt-5">Your orders!</h3>
-  <div class="cards-profile mb-5">
+  <h3 class="mb-5 mt-5">Your orders</h3>
+  <div class="cards-home mb-5">
     <% @user.orders.each do |order| %>
-      <div class="card-profile">
+      <div class="card-home">
+         <%= link_to "", item_order_path(order.item, order), class: "card-link" %>
         <% if order.item.photo.attached? %>
-          <div class="card-profile-image" style="background-image: url('https://res.cloudinary.com/dtoehsudt/image/upload/v1582804201/<%= order.item.photo.key %>')">
+          <div class="card-home-image" style="background-image: url('https://res.cloudinary.com/dtoehsudt/image/upload/v1582804201/<%= order.item.photo.key %>')">
           </div>
         <% else %>
-          <div class="card-profile-image-d"><h2 class="home-logo">CAKE</h2>
+          <div class="card-home-image-d"><h2 class="home-logo">CAKE</h2>
           </div>
           <%#= cl_image_tag i.photo.key, height: 300, crop: :fill %>
         <% end %>
         <p><%= link_to order.item.name.capitalize, item_path(order.item), class: "card-home-link" %></p>
-        <p><%= link_to 'Show more', item_order_path(order), class: "btn btn-dark" %></p>
+        <div class="card-price-btn">
+            <p>£<%= order.item.cost %></p>
+            <p class="card-portion">Portions: <%= order.item.portions %></p>
+          </div>
       </div>
     <% end %>
   </div>
 
-  <h3 class="mb-5 mt-5">Your cakes!</h3>
-  <div class="cards-profile mb-5">
+  <h3 class="mb-5 mt-5">Your cakes</h3>
+  <div class="cards-home mb-5">
     <% @user.items.each do |item| %>
-      <div class="card-profile">
+      <div class="card-home">
+         <%= link_to "", item_path(item), class: "card-link" %>
         <% if item.photo.attached? %>
-          <div class="card-profile-image" style="background-image: url('https://res.cloudinary.com/dtoehsudt/image/upload/v1582804201/<%= item.photo.key %>')">
+          <div class="card-home-image" style="background-image: url('https://res.cloudinary.com/dtoehsudt/image/upload/v1582804201/<%= item.photo.key %>')">
           </div>
         <% else %>
-          <div class="card-profile-image-d"><h2 class="home-logo">CAKE</h2>
+          <div class="card-home-image-d"><h2 class="home-logo">CAKE</h2>
           </div>
           <%#= cl_image_tag i.photo.key, height: 300, crop: :fill %>
         <% end %>
         <p><%= link_to item.name.capitalize, item_path(item), class: "card-home-link" %></p>
+        <div class="card-price-btn">
+            <p>£<%= item.cost %></p>
+            <p class="card-portion">Portions: <%= item.portions %></p>
+          </div>
       </div>
     <% end %>
    </div>
+
+
 
 </div>
