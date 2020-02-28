@@ -3,28 +3,48 @@
   <input type="submit">
 </form> -->
 
+<div class= search-bar>
   <%= form_tag items_path, method: :get do %>
     <%= text_field_tag :query,
     params[:query],
     class: "form-control",
     placeholder: "Find a cake"
      %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
+    <%= submit_tag "Search", class: "submit-btn search" %>
   <% end %>
+</div>
 
 <% if @items.empty? %>
-  <h1>Nothing to see here</h1>
-  <%= link_to "View all cakes", items_path %>
+<div>
+  <h3 class= 'text-center items-text'>Unfortunately, we do not have a cake to match your search.</h3>
+</div>
+   <h3 class="index-link-home"><%= link_to "View all", items_path, class: "index-link-home-text text-center" %></h3>
+  <% else %>
+  <h2 class="cards-home-title text-center all-cakes">All cakes</h2>
 <% end %>
 
-<% @items.each do |item| %>
-  <p>
-    <strong><%= item.name %></strong>
-    <%= item.flavour %>
-    <%= item.portions %>
-    <%= item.occasion %>
-  </p>
 
-<% end %>
+<div class="cards-box container">
 
+
+
+<div class="cards-home row">
+      <% @items.each do |i| %>
+        <div class="card-home col-3">
+          <% if i.photo.attached? %>
+            <div class="card-home-image" style="background-image: url('https://res.cloudinary.com/dtoehsudt/image/upload/v1582804201/<%= i.photo.key %>')">
+            </div>
+          <% else %>
+            <div class="card-home-image-d"><h2 class="home-logo">CAKE</h2>
+            </div>
+          <% end %>
+          <p><%= link_to i.name.capitalize, item_path(i), class: "card-home-link" %></p>
+          <div class="card-price-btn">
+            <p class="card-text price">£<%= i.cost %></p>
+            <p class="link-home-btn"><%= link_to "More info", item_path(i), class: "card-home-link2" %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+</div>
 
