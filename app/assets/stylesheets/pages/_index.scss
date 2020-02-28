@@ -1,3 +1,23 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "profile";
+
+.all-cakes {
+  margin-bottom: 40px;
+  margin-top: 15px;
+}
+
+.search-bar {
+  max-width: 400px;
+  margin-left: 14px;
+}
+
+.search {
+  display: block;
+}
+
+.items-text {
+  margin-bottom: 50px;
+  margin-top: 100px;
+}
+
