@@ -15,9 +15,10 @@
   text-decoration: none;
   color: $background-colour;
   margin-bottom: 50px;
+  transition: 0.3s;
   &:hover {
+    opacity: 0.9;
     transform: scale(1.1);
-    transition: 0.15s;
   }
 }
 
