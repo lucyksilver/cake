@@ -28,7 +28,7 @@
         <p><%= link_to order.item.name.capitalize, item_path(order.item), class: "card-home-link" %></p>
         <div class="card-price-btn">
             <p>£<%= order.item.cost %></p>
-            <p class="card-portion"><%= order.item.portions %></p>
+            <p class="card-portion">Portions: <%= order.item.portions %></p>
           </div>
       </div>
     <% end %>
@@ -50,7 +50,7 @@
         <p><%= link_to item.name.capitalize, item_path(item), class: "card-home-link" %></p>
         <div class="card-price-btn">
             <p>£<%= item.cost %></p>
-            <p class="card-portion"><%= item.portions %></p>
+            <p class="card-portion">Portions: <%= item.portions %></p>
           </div>
       </div>
     <% end %>
