@@ -47,7 +47,24 @@
   }
 }
 
-
+.big-middle-button-d {
+  position: absolute;
+  bottom: 100px;
+  right: -40px;
+  width: 80px;
+  height: 80px;
+  background: $link-hover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border-radius: 50%;
+  font-size: 30px;
+  &:hover {
+    color: red;
+    background: lighten($link-hover, 10%);
+  }
+}
 
 
 .card-show-image {
